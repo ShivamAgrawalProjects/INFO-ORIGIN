@@ -1,0 +1,100 @@
+
+<html>
+    <head><title>Assignment No.3</title>
+      <h1 style="text-decoration-line: underline;"> <strong>JavaScript Assignment 3:-></strong> </h1>  Create three input box and named it as Min,Max and Mul respectively with one Button named it as "Validate".
+(Deadline-         1 day)<br><br>
+Requirement 1: Create three input boxes and named it as Min,Max and Mul respectively.<br>
+Requirement 2: Create a button and named it as "Validate".<br>
+Requirement 3: Following conditions on the input box should get satisfied.<br> 
+1) Min should be less than Max<br>
+2) Mul should be less than Max.<br>
+3) Mul<=Min <br>
+4) Min and Mul should be the factor of Max.<br>
+Requirement 4: If any conditions get false, then that box should be highlighted by making the border of that box as "red".
+<style type="text/css">
+  body
+  {
+      background-image: url(info.jpg);
+      padding-bottom: 200px;
+      background-size: 500px;
+      background-repeat: no-repeat;
+      background-position: center;
+      
+  }
+   </style>
+
+</head>
+    <body><br>
+      <p><strong>Enter the numbers:</strong></p>
+      <strong>Min: </strong><input type="text" name="a" id="demo1"><br><br><br>   
+     <strong> Max: </strong><input type="text" name="b" id="demo2"><br><br><br>
+<strong>Mul: </strong><input type="text" name="c" id="demo3"><br><br><br>
+      <button onclick="myFunction()"><strong>Validate</strong> </button><br>
+    </body> <hr>
+    <strong><a href="JavaScript2.html">Previous Assignment:~></a></strong><br><br>
+    <strong><a href="JavaScript4.html">Next Assignment:~></a></strong><br><br>
+    <strong><a href="Welcome.html">Back to Home Page:~></a></strong><br><br>
+
+<script>
+function myFunction()
+ {   //first way 
+    var min=parseInt(document.getElementById("demo1").value);
+    var max=parseInt(document.getElementById("demo2").value);
+    var mul=parseInt(document.getElementById("demo3").value);
+   
+    /* second way  by simply writing 
+    var min=document.getElementById("demo1").value;
+    var max=document.getElementById("demo2").value;
+    var mul=document.getElementById("demo3").value;
+    min = parseInt(min);
+    max = parseInt(max);
+    mul = parseInt(mul);*/
+         
+    //we are applying conditions from here
+    if(!(min < max))          //Ist Condition.................
+    {  
+    document.getElementById('demo1').style.borderColor = "red";
+    alert('your input for "min" is not less than "max"');
+    }
+    else  
+    {
+    document.getElementById('demo1').style.borderColor = "";
+    }
+    if(!(max > mul))      //2nd Condition...................
+    {
+    document.getElementById('demo2').style.borderColor = "red";
+    alert('your input for "mul" is not less than "max"');
+    }
+     else
+     {
+    document.getElementById('demo2').style.borderColor = "";
+    }
+    if(!(mul<= min))               //3rd Condition..............................
+    {
+    document.getElementById('demo3').style.borderColor = "red";
+    alert('your input for "mul" is not less than or equals to "min"');
+    } 
+    else
+    {
+    document.getElementById('demo3').style.borderColor = "";
+    }
+    if(!(max%min==0))     //checking whether 'min' is the factor of 'max' or not.........
+    {
+    document.getElementById('demo1').style.borderColor = "red";
+    alert('your input for "min" is not the factor of "max"');
+    } 
+    else
+    {
+    document.getElementById('demo1').style.borderColor = "";
+    }
+    if(!(max%mul==0))                //checking whether "mul" is the factor of "max" or not..........
+    {
+    document.getElementById('demo3').style.borderColor = "red";
+    alert('your input for "mul" is not the factor of "max"');
+    } else
+    {
+    document.getElementById('demo3').style.borderColor = "";
+    }
+    }
+    </script>
+    </html>

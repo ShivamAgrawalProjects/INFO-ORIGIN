@@ -1,0 +1,126 @@
+<html>
+    <body>
+        <title>
+            Assignment No.6
+        </title>
+        <h1 style="text-decoration-line: underline;"> <strong>JavaScript Assignment 6:-></strong> </h1>  Create three buttons with initial values "0" as text and one button as "Validate". <br><br>
+    
+        Requirement 1: On click of any of the three buttons,value of that particular button should be increased by 1.<br>
+        Requirement 2: Onclick of Validate button :<br>
+                       (i) The value of unclicked buttons (among three buttons) should get increased by 1.<br>
+                       (ii) If all the three buttons are clicked , the value of oldest (first) clicked button (among three buttons) should get increased by 1.  
+        <br><br> <form name="myform"><center>
+         <input type="button" id="button1" class="buttons" value="0"  onclick="ButtonClick(this.id, this.value)" />
+        <input type="button" id="button2" class="buttons" value="0" onclick="ButtonClick(this.id, this.value)" />
+        <input type="button" id="button3" class="buttons" value="0"  onclick="ButtonClick(this.id, this.value)" />
+        <input type="button" id="validate1"  value="Validate" onclick="validate()" />
+       </center> 
+         </form>
+        </body><hr>
+        <strong><a href="JavaScript5.html">Previous Assignment:~></a></strong><br><br>
+        <strong><a href="Welcome.html">Back to Home Page:~></a></strong><br><br>
+            <style type="text/css">
+          body
+          {
+              background-image: url(info.jpg);
+              padding-bottom: 200px;
+              background-size: 500px;
+              background-repeat: no-repeat;
+              background-position: center;
+              
+          }
+           </style>
+      
+
+
+<head>
+<script>
+var array = [];
+
+function ButtonClick(clicked_id, clicked_value)  // this function will be called when any of three buttons will be clicked ..and it holds the information of which button is clicked........
+{
+      document.getElementById(clicked_id).value = parseInt(parseInt(clicked_value)+1);  //onclicking any button , value of particular button will be increased by 1..
+      var n = array.includes(clicked_id);
+             if(array.length <3)
+             {
+                  if(n == false)
+                   {
+                        array.push(clicked_id);
+                   }
+             }
+             else
+             {
+                  var index = array.indexOf(clicked_id);
+                  var abc = array.splice(index , 1).toString();
+                   array.push(abc);                
+             }
+
+}
+function validate() // this function will be called when "validate" button will be clickd.....
+{
+   if (array.length == 0) //condition for when no buttons are clicked.......
+   {
+       document.myform.button1.value= parseInt(parseInt(button1.value)+1);
+       document.myform.button2.value= parseInt(parseInt(button2.value)+1);
+       document.myform.button3.value= parseInt(parseInt(button3.value)+1);
+   }
+   else
+   {
+        if(array.length==1)                // when any one button is clicked..........
+         {
+             if(array[0]=="button1")        //if button1 is clicked......
+              {
+                   document.myform.button2.value= parseInt(parseInt(button2.value)+1);
+                    document.myform.button3.value= parseInt(parseInt(button3.value)+1);
+                 }   
+                 else if(array[0] =="button2")    //if button2 is clicked......
+                  {
+                       document.myform.button1.value= parseInt(parseInt(button1.value)+1);
+                        document.myform.button3.value= parseInt(parseInt(button3.value)+1);
+                 }
+                  else if(array[0]=="button3")           //if button3 is clicked......
+                  {
+                       document.myform.button1.value= parseInt(parseInt(button1.value)+1);
+                        document.myform.button2.value= parseInt(parseInt(button2.value)+1);
+                    }
+         }
+       var xyz = array[0];
+      if( array.length == 2)        //when two buttons are clicked ........
+       {
+            if(xyz =="button1" && array[1] =="button2") //if button1 and button2 both are clicked...........
+            {
+                 document.myform.button3.value= parseInt(parseInt(button3.value)+1);
+             }
+               else if(xyz == "button1" && array[1]=="button3")     //if button1 and button3 both are clicked...........
+                {
+                     document.myform.button2.value= parseInt(parseInt(button2.value)+1);
+                }
+                else if(xyz=="button2" && array[1]=="button1")   //if button2 and button1 both are clicked...........
+                 {
+                       document.myform.button3.value= parseInt(parseInt(button3.value)+1); 
+                 }
+                   else if(xyz=="button2" && array[1]=="button3")     //if button2 and button3 both are clicked...........
+                     {
+                          document.myform.button1.value= parseInt(parseInt(button1.value)+1); 
+                     }
+                      else if(xyz=="button3" && array[1]=="button1" )        //if button3 and button1 both are clicked...........
+                       {
+                            document.myform.button2.value= parseInt(parseInt(button2.value)+1);
+                         }
+                          else if(xyz=="button3" && array[1]=="button2")    //if button3 and button2 both are clicked...........
+                          {
+                               document.myform.button1.value= parseInt(parseInt(button1.value)+1);  
+                             }
+         }
+          if(array.length == 3)   //when all the three buttons clicked.......
+          {
+               document.getElementById(array[0]).value= parseInt(parseInt(document.getElementById(array[0]).value)+1);
+          }
+
+  }
+
+}
+
+</script>
+</head>
+</html>

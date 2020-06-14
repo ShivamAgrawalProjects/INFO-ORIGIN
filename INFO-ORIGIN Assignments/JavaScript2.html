@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>Assignment No.2</title>
+<h1 style="text-decoration-line: underline;"> <strong>JavaScript Assignment 2:-></strong> </h1>  Create two input box. Provide inputs in digit to both the input box and perform Add,Sub,Mul,Div and Mod operation .(Deadline- 1 day)
+<br><br>Requirement 1: Create two input box.
+<br>Requirement 2: Create four buttons and text as Add for performing Addition, Sub for Subtraction, Mul for Multiplication , Div for Division and mod for modulus respectively.
+<br>Requirement 3: Enter any digit in both the input box and click on a particular button for performing operations according to your requirement.
+<br>Requirement 4: Display the result as a text or use any message box.
+<style type="text/css">
+    body
+    {
+        background-image: url(info.jpg);
+        padding-bottom: 250px;
+        background-size: 500px;
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
+     </style>
+
+</head>
+<body>
+    
+    <br><br>
+    <strong>Enter first Numeric Value :</strong>   <input type="number" id="value1"> </br><BR>
+    <strong>Enter Second Numeric Value :</strong> <input type="number" id="value2"> </br>
+     </br>
+    <strong>Click on the buttons to perform the corresponding Arithmetic Operation</strong>
+    <output type="number" id="value3"> </input></br><br>
+    <input type="button" Value="Add" onClick=Addition()> </br>
+    <br><input type="button" Value="Sub" onClick=Subtraction()></br><br>
+    <input type="button" Value="Mul" onClick=Multiplication()></br><br>
+    <input type="button" Value="Div" onClick=Division()></br><br>
+<input type="button" Value="Mod" onClick=Modulus()></br><br>
+    <hr>
+    <strong><a href="JavaScript1.html">Previous Assignment:~></a></strong><br><br>
+    <strong><a href="JavaScript3.html">Next Assignment:~></a></strong><br><br>
+    <strong><a href="Welcome.html">Back to Home Page:~></a></strong><br><br>
+
+
+
+    </body>
+    <script type="text/javascript">
+        function Addition()
+        {
+          var x=parseFloat(document.getElementById('value1').value);
+        var y=parseFloat(document.getElementById('value2').value);
+        var z=parseFloat(document.getElementById('value3').value);
+        var z=(x+y);
+        document.write("The Addition result is "+z);
+        
+        }
+        function Subtraction()
+        {
+            {
+          var x=parseFloat(document.getElementById('value1').value);
+          var y=parseFloat(document.getElementById('value2').value);
+        var z=parseFloat(document.getElementById('value3').value);
+        var z=(x-y);
+        document.write("The Subtraction result is "+z);
+        }
+        }
+        function Multiplication()
+        {
+            var x,y,z;
+           x=parseFloat(document.getElementById('value1').value);
+           y=parseFloat(document.getElementById('value2').value);
+           z=parseFloat(document.getElementById('value3').value);
+           z=(x*y);
+        document.write("The Multiplication result is "+z);
+        }
+        function Division()
+        {
+            var x,y,z;
+           x=parseFloat(document.getElementById('value1').value);
+           y=parseFloat(document.getElementById('value2').value);
+           z=parseFloat(document.getElementById('value3').value);
+           z=(x/y);
+        document.write("The Division result is "+z);
+        }
+     function Modulus()
+        {
+            var x,y,z;
+           x=parseFloat(document.getElementById('value1').value);
+           y=parseFloat(document.getElementById('value2').value);
+           z=parseFloat(document.getElementById('value3').value);
+           z=(x%y);
+        document.write("The Modulus result is "+z);
+        }
+
+        </script>
+    </html>
+
+

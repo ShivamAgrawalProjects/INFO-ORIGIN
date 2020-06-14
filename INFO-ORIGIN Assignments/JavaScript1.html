@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <h1 style="text-decoration-line: underline;"> <strong>JavaScript Assignment 1:-></strong> </h1>         <p> Create three buttons and write a text on those button as Red,Green,Yellow.On click of any of these button ,the color of that button should be changed according to their name. </p>
+        <title>Assignment No.1</title>
+        
+    </head>
+    
+    <body style=" background-image: url(info.jpg); padding-bottom: 500px; background-size: 500px; background-repeat: no-repeat; background-position: center;">
+        <center>
+            <input type="button" onclick="myFunction(this)" id="demo1" value="Red">
+            <input type="button" onclick="myFunction(this)" id="demo2" value="Green">
+            <input type="button" onclick="myFunction(this)" id="demo3" value="Blue">
+           
+         </center><hr>
+    </body> 
+     <strong><a href="JavaScript2.html" style="text-align-last: center;">Next Assignment:~></a></strong><br><br>
+     <strong><a href="Welcome.html" >Back to Home Page:~></a></strong>
+
+
+<script>
+function myFunction(x)
+{
+    document.getElementById(x.id).style.backgroundColor=x.value;
+}
+</script>
+ </html>

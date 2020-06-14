@@ -1,0 +1,290 @@
+<html>
+  
+  <body>
+    <h1 style="text-decoration-line: underline;"> <strong>JavaScript Assignment 5:-></strong> </h1> 
+    <a href="JavaScript4.html"  style="font: x-large;text-decoration-line: underline;">Previous Assignment:~></a>
+  </br>
+    <center>  
+   <button onclick="player1()"  id="demo1" style="border-color: rgb(255, 8, 0);"><strong>Player 1</strong></button>
+     <p id="demoA"></p> <br>
+    <table id="mytable1" width="25%" height="25%" border="7" cellpadding="8" cellspacing="2" >
+      <tr>
+        <td id="td21">&nbsp;21</td>
+        <td id="td22">&nbsp;22</td>
+        <td id="td23">&nbsp;23</td>
+        <td id="td24">&nbsp;24</td>
+        <td id="td25">&nbsp;25</td>
+      </tr>
+      <tr>
+        <td id="td20">&nbsp;20</td>
+        <td id="td19">&nbsp;19</td>
+        <td id="td18">&nbsp;18</td>
+        <td id="td17">&nbsp;17</td>
+        <td id="td16">&nbsp;16</td>
+      </tr>
+      <tr>
+        <td id="td11">&nbsp;11</td>
+        <td id="td12">&nbsp;12</td>
+        <td id="td13"  >&nbsp;13<strong><br>(Snake)</strong></td>
+        <td id="td14">&nbsp;14</td>
+        <td id="td15">&nbsp;15</td>
+      </tr>
+       
+        <tr>
+          <td id="td10">&nbsp;10</td>
+          <td id="td9" >&nbsp;9<strong><br>(Snake)</strong></td>
+          <td id="td8">&nbsp;8</td>
+          <td id="td7">&nbsp;7</td>
+          <td id="td6">&nbsp;6</td>
+        </tr>
+        <tr>
+          <td id="td1">&nbsp;1</td>
+          <td id="td2">&nbsp;2</td>
+          <td id="td3" >&nbsp;3<strong><br>(Snake)</strong></td>
+          <td id="td4">&nbsp;4</td>
+          <td id="td5" >&nbsp;5<strong><br>(Snake)</strong></td>
+        </tr>
+    </table><br><br>
+    <button onclick="player2()" id="demo2" style="border-color: rgb(229, 255, 0);"><strong>Player 2</strong></button><br><p id="demoB"></p><br>
+    
+    <table id="mytable2" width="25%" height="25%" border="7" cellpadding="8" cellspacing="2" >
+      <table id="mytable2" width="25%" height="25%" border="7" cellpadding="8" cellspacing="2" >
+      <tr>
+        <td id="tdl21">&nbsp;21</td>
+        <td id="tdl22">&nbsp;22</td>
+        <td id="tdl23">&nbsp;23</td>
+        <td id="tdl24">&nbsp;24</td>
+        <td id="tdl25">&nbsp;25</td>
+      </tr>
+      <tr>
+        <td id="tdl20">&nbsp;20</td>
+        <td id="tdl19">&nbsp;19</td>
+        <td id="tdl18">&nbsp;18</td>
+        <td id="tdl17">&nbsp;17</td>
+        <td id="tdl16">&nbsp;16</td>
+      </tr>
+      <tr>
+        <td id="tdl11">&nbsp;11</td>
+        <td id="tdl12">&nbsp;12</td>
+        <td id="tdl13" >&nbsp;13<strong><br>(Snake)</strong></td>
+        <td id="tdl14">&nbsp;14</td>
+        <td id="tdl15">&nbsp;15</td>
+      </tr>
+        <tr>
+          <td id="tdl10">&nbsp;10</td>
+          <td id="tdl9">&nbsp;9<strong><br>(Snake)</strong></td>
+          <td id="tdl8">&nbsp;8</td>
+          <td id="tdl7">&nbsp;7</td>
+          <td id="tdl6">&nbsp;6</td>
+        </tr>
+        <tr>
+          <td id="tdl1">&nbsp;1</td>
+          <td id="tdl2">&nbsp;2</td>
+          <td id="tdl3" >&nbsp;3<strong><br>(Snake)</strong></td>
+          <td id="tdl4">&nbsp;4</td>
+          <td id="tdl5" >&nbsp;5<strong><br>(Snake)</strong></td>
+        </tr>
+        </table>
+        </center>  
+        <hr>
+        <strong><a href="JavaScript6.html">Next Assignment:~></a></strong><br><br>
+        <strong><a href="Welcome.html">Back to Home Page:~></a></strong><br><br>
+  </body>
+  <script>
+var currentPos1=0;
+var currentPos2=0;
+function player2()
+ {  
+
+   document.getElementById('demoB').innerHTML = getRndInteger(1,6);
+   
+  /* if(document.getElementById('demoB').innerHTML== 6)
+    {
+      document.getElementById("demo1").disabled = true;
+      document.getElementById("demo2").disabled = false;
+    }
+    else
+    {*/
+       document.getElementById("demo1").disabled = true;
+       document.getElementById("demo2").disabled = true;
+       document.getElementById("demo1").disabled = false;
+     
+    var n= document.getElementById('demoB').innerHTML;
+    console.log("PLAYER 2 :- you got : "+ n);
+    
+  if(currentPos2<25)
+  {
+    currentPos2=(+currentPos2)+(+n);
+    console.log("PLAYER 2's current position is "+ currentPos2);
+
+  }   
+if(currentPos2>25)
+{
+  
+        currentPos2=(+currentPos2)-(+n);
+        alert(currentPos2);
+}              
+ if(currentPos2 == 25)
+ {
+               alert("Congratulations, Player 2 has won the game ");
+               document.getElementById("demo1").disabled = true;
+               document.getElementById("demo2").disabled = true;
+ }
+
+
+    var i;
+    if(i=currentPos2)
+    {
+      document.getElementById("tdl"+i).style.backgroundColor="yellow";
+     
+   }
+ 
+    
+     switch(currentPos2)
+     {
+            case 3:    
+                       alert("Snake bite for player2 , now ur current position has been set up to zero again") ;
+                       for(i=1;i<=3;i++)
+                       {
+                         document.getElementById("tdl"+i).style.backgroundColor="white";
+                       }                //SNAKE
+                       currentPos2 = 0;
+                       break;
+
+
+            case 5:
+                       alert("Snake bite for player2 , now ur current position has been set up to zero again") ;
+                       for(i=1;i<=5;i++)
+                       {
+                         document.getElementById("tdl"+i).style.backgroundColor="white";
+                       }//SNAKE
+                       currentPos2 = 0;
+                       break;
+
+            case 9: 
+                       alert("Snake bite for player2 , now ur current position has been set up to zero again") ;  
+                       for(i=1;i<=9;i++)
+                       {
+                         document.getElementById("tdl"+i).style.backgroundColor="white";
+                       }                        //SNAKE
+                       currentPos2 = 0;
+                    
+                       break;
+                                     
+            case 13:   
+                       alert("Snake bite for player2 , now ur current position has been set up to zero again") ;  
+                       for(i=1;i<=13;i++)
+                       {
+                         document.getElementById("tdl"+i).style.backgroundColor="white";
+                       }                    //snake
+                       currentPos2 = 0;
+                        break;
+             case 25:
+                      for(i=1;i<=25;i++)  
+                      {
+                         document.getElementById("tdl"+i).style.backgroundColor="white";
+                         document.getElementById("td"+i).style.backgroundColor="white";
+                      }          
+           }
+            
+}
+ 
+function player1()
+{
+  
+    document.getElementById('demoA').innerHTML = getRndInteger(1,6);
+   /* if(document.getElementById('demoA').innerHTML== 6)
+    {
+      document.getElementById("demo2").disabled = true;
+      document.getElementById("demo1").disabled = false;
+    }
+    else*/
+    
+    document.getElementById("demo2").disabled = true;
+    document.getElementById("demo1").disabled = true;
+    document.getElementById("demo2").disabled = false;
+   
+   
+    var newMove=document.getElementById('demoA').innerHTML;
+    console.log(" PLAYER 1 :- you got : "+ newMove);
+if(currentPos1<25)
+{
+    currentPos1=(+currentPos1)+(+newMove);
+    console.log("PLAYER 1's current position is "+ currentPos1);
+
+}   
+if(currentPos1>25)
+{
+     
+      currentPos1=(+currentPos1)-(+newMove);
+      alert(currentPos1);
+}
+       
+if(currentPos1 == 25)
+  {
+               alert("Congratulations, Player 1 has won the game ");
+               document.getElementById("demo1").disabled = true;
+               document.getElementById("demo2").disabled = true;
+ }                         
+    var i;
+    if(i=currentPos1)
+    {
+       document.getElementById("td"+i).style.backgroundColor="red";
+  
+    }
+  
+    switch(currentPos1)
+     {
+            case 3: 
+                    alert("Snake bite for player1 , now ur current position has been set up to zero again") ;                 //SNAKE
+                    for(i=1;i<=3;i++)
+                       {
+                         document.getElementById("td"+i).style.backgroundColor="white";
+                       }                //SNAKE
+                       currentPos1 = 0;
+                   break;
+                             
+            case 5: 
+                  alert("Snake bite for player1 , now ur current position has been set up to zero again") ;                         //SNAKE
+                  for(i=1;i<=5;i++)
+                       {
+                         document.getElementById("td"+i).style.backgroundColor="white";
+                       }                //SNAKE
+                       currentPos1 = 0;
+                   break;
+
+            case 9:  
+                  alert("Snake bite for player1 , now ur current position has been set up to zero again") ;                 //SNAKE
+                  for(i=1;i<=9;i++)
+                       {
+                         document.getElementById("td"+i).style.backgroundColor="white";
+                       }                //SNAKE
+                       currentPos1= 0;
+                    break;
+                                     
+            case 13: 
+                  alert("Snake bite for player1 , now ur current position has been set up to zero again") ;                        //snake
+                  for(i=1;i<=13;i++)
+                       {
+                         document.getElementById("td"+i).style.backgroundColor="white";
+                       }                //SNAKE
+                       currentPos1 = 0;
+                    break;
+              case 25:
+                      for(i=1;i<=25;i++)  
+                      {
+                         document.getElementById("td"+i).style.backgroundColor="white";
+                         document.getElementById("tdl"+i).style.backgroundColor="white";
+                      }
+           }   
+ }
+ 
+function getRndInteger(min, max)
+{
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+</script>
+</html>
+
+
+

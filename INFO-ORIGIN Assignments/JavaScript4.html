@@ -1,0 +1,64 @@
+
+<html>
+    <head><title>Assignment No.4</title>
+       <h1 style="text-decoration-line: underline;"> <strong>JavaScript Assignment 4:-></strong> </h1> Create three different colored buttons(Red,Green,Yellow) and one Rotate button. On click of the Rotate button, color of the buttons should rotate clockwise.
+(Deadline- 1 day)<br><br>
+Requirement 1: Create three buttons with red, green, yellow colored respectively.<br>
+Requirement 2: Write a text on button according to their color.
+               For eg: If a "red" colored button is created, then the text should be "Red".<br>
+Requirement 3: Create one button and named it as "Rotate".<br>
+Requirement 4: On click of Rotate button the color of three buttons should be changed.Like, the color of 2nd button should be changed to color of 1st button, 
+               the color of 3rd button should be changed to color of 2nd button, and the color of 1st button should be changed to color of 3rd button.<br>
+Requirement 5: Make sure with each click of Rotate button, the colors should get rotated clockwise.<br>
+<style type="text/css">
+    body
+    {
+        background-image: url(info.jpg);
+        padding-bottom: 500px;
+        background-size: 500px;
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
+     </style>
+
+    </head>
+    
+    <body ><br><br>
+    <center>
+        <input type="button" id="demo1" value="Red"  style="background:red">  
+        <input type="button" id="demo2" value="Green"  style="background:green">
+        <input type="button" id="demo3" value="Yellow" style="background:yellow"><br><br>
+        <input type="button"  value = "Rotate"  onclick="myFunction()">
+    </center>
+    </body><hr>
+    <strong><a href="JavaScript3.html">Previous Assignment:~></a></strong><br><br>
+    <strong><a href="JavaScript5.html">Next Assignment:~></a></strong><br><br>
+    <strong><a href="Welcome.html">Back to Home Page:~></a></strong><br><br>
+
+  <script>
+      
+    function myFunction() 
+    
+    {  
+         //Applying Swapping Logic for clockwise direction
+
+        var temp;
+        temp=document.getElementById('demo3').style.backgroundColor;
+        document.getElementById('demo3').style.backgroundColor = document.getElementById('demo1').style.backgroundColor;
+        document.getElementById('demo1').style.backgroundColor=document.getElementById('demo2').style.backgroundColor;
+        document.getElementById('demo2').style.backgroundColor=temp;
+
+         //Applying Swapping Logic for Anti-Clockwise Direction
+
+        /* 
+        temp=document.getElementById('demo3').style.backgroundColor;
+        document.getElementById('demo3').style.backgroundColor = document.getElementById('demo2').style.backgroundColor;
+        document.getElementById('demo2').style.backgroundColor=document.getElementById('demo1').style.backgroundColor;
+        document.getElementById('demo1').style.backgroundColor=temp;
+         */
+    }
+    
+    
+    </script>
+</html>
